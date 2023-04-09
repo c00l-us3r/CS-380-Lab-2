@@ -37,9 +37,11 @@ class BinarySearchTree{
    
    
    
-   /*
-   pre-order traversal
-   */
+   /***
+    * Method that prints out the Pre-Order list
+    * of the values within the BST.
+    * @param root the root of the BST to traverse
+    */
    public void preOrderTraversal(Node root){
       
       //base case
@@ -60,9 +62,11 @@ class BinarySearchTree{
 
    
    
-   /*
-   in-order traversal
-   */
+   /***
+    * Method to print out th In-Order list
+    * of the values in the BST
+    * @param root the root of the BST to traverse
+    */
    public void inOrderTraversal(Node root){
       
       //base case
@@ -82,9 +86,11 @@ class BinarySearchTree{
    
    
    
-   /*
-   post-order traversal
-   */
+   /***
+    * Method to print the Post-Order list
+    * of the values inside the BST.
+    * @param root the root of the BST to traverse
+    */
    public void postOrderTraversal(Node root){
       
       //base case
@@ -105,29 +111,39 @@ class BinarySearchTree{
    
    
    
-   /*
-   a method to find the node in the tree
-   with a specific value
-   */
+   /***
+    * Method that will locate the node
+    * that contains the specified key.
+    * @param root the root of the BST that will be searched
+    * @param kay the specific value that will be found
+    * @return boolean value to indicate whether the speciied key exists within the BST
+    */
    public boolean find(Node root, int key){
+   
+      //result variable
+      boolean result = false;
       
       if(root == null){             //base case
          return false;
       }else if(key > root.value){   //go left if smaller
-         find(root.left, key);
+         result = find(root.left, key);
       }else if(key < root.value){   //go right if larger
-         find(root.right, key);
+         result = find(root.right, key);
       }else if(key == root.value){  //return true when found
          return true;
-      }         
+      }  
+      //return
+      return result;       
    }
    
    
    
-   /*
-   a method to find the node in the tree
-   with a smallest key
-   */
+   /***
+    * Method to retrieve the minimum value
+    * stored within the BST.
+    * @param root the root of the BST to be searched
+    * @return the minimum value within the BST
+    */
    public int getMin(Node root){
    
       //base case
@@ -135,23 +151,47 @@ class BinarySearchTree{
          return Integer.MAX_VALUE;
       }
       
+      //result variable
+      int result = 0;
+      
       //keep going left until no
       //left is available 
       if(root.left != null){
-         getMin(root.left);
+         result = getMin(root.left);
       }else{
          return root.value;
       }
+      //return
+      return result;
    }
   
   
   
-   /*
-   a method to find the node in the tree
-   with a largest key
-   */
+   /***
+    * Method to retrive the maximum value
+    * stored within the BST.
+    * @param root the root of the BST to be searched
+    * @return the maximum value within the BST
+    */
    public int getMax(Node root){
-     //implement me
+     
+      //base case
+      if(root == null){
+         return Integer.MAX_VALUE;
+      }
+      
+      //result variable
+      int result = 0;
+      
+      //keep going right until no
+      //right is available 
+      if(root.right != null){
+         result = getMin(root.right);
+      }else{
+         return root.value;
+      }   
+      //return
+      return result;  
    }
    
    
