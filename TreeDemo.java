@@ -129,7 +129,19 @@ class BinarySearchTree{
    with a smallest key
    */
    public int getMin(Node root){
-      //implement me
+   
+      //base case
+      if(root == null){
+         return Integer.MAX_VALUE;
+      }
+      
+      //keep going left until no
+      //left is available 
+      if(root.left != null){
+         getMin(root.left);
+      }else{
+         return root.value;
+      }
    }
   
   
