@@ -48,7 +48,7 @@ class BinarySearchTree{
       }
    
       //print out the nodes
-      System.out.print(root.value + " ");
+      System.out.print(root.value + ", ");
       
       //recursive call to go down left subtrees
       preOrderTraversal(root.left);
@@ -87,8 +87,19 @@ class BinarySearchTree{
    */
    public void postOrderTraversal(Node root){
       
+      //base case
+      if(root==null){
+         return;
+      }
       
+      //recursive call down the left subtree
+      postOrderTraversal(root.left);
       
+      //recursive call down the right subtree
+      postOrderTraversal(root.right);
+      
+      //print out the nodes
+      System.out.println(root.value + ", ");
       
    }
    
