@@ -41,7 +41,20 @@ class BinarySearchTree{
    pre-order traversal
    */
    public void preOrderTraversal(Node root){
-      //implement me
+      
+      //base case
+      if (node == null){
+         return;
+      }
+   
+      //print out the nodes
+      System.out.print(node.key + " ");
+      
+      //recursive call to go down left subtrees
+      printPreorder(node.left);
+   
+      //recursove call to go down right subtrees
+      printPreorder(node.right);
    }
 
    
@@ -69,7 +82,7 @@ class BinarySearchTree{
    with a specific value
    */
    public boolean find(Node root, int key){
-	  //implement me
+     //implement me
       return false;           
    }
    
@@ -90,7 +103,7 @@ class BinarySearchTree{
    with a largest key
    */
    public int getMax(Node root){
-	  //implement me
+     //implement me
    }
    
    
