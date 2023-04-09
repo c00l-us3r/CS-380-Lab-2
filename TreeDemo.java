@@ -43,18 +43,19 @@ class BinarySearchTree{
    public void preOrderTraversal(Node root){
       
       //base case
-      if (node == null){
+      if (root == null){
          return;
       }
    
       //print out the nodes
-      System.out.print(node.key + " ");
+      System.out.print(root.value + " ");
       
       //recursive call to go down left subtrees
-      printPreorder(node.left);
+      preOrderTraversal(root.left);
    
-      //recursove call to go down right subtrees
-      printPreorder(node.right);
+      //recursive call to go down right subtrees
+      preOrderTraversal(root.right);
+      
    }
 
    
@@ -63,7 +64,20 @@ class BinarySearchTree{
    in-order traversal
    */
    public void inOrderTraversal(Node root){
-      //implement me
+      
+      //base case
+      if (root == null){
+         return;
+      }
+      
+      //recursive call to go down left subtrees
+      inOrderTraversal(root.left);
+      
+      //print out the nodes
+      System.out.print(root.value + ", ");
+   
+      //recursive call to go down right subtrees
+      inOrderTraversal(root.right);      
    }
    
    
@@ -72,7 +86,10 @@ class BinarySearchTree{
    post-order traversal
    */
    public void postOrderTraversal(Node root){
-      //implement me
+      
+      
+      
+      
    }
    
    
